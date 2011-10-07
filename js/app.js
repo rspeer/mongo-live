@@ -384,7 +384,7 @@ function createPercentChart(divId, lineColor, fillColor, group1, identity1, grou
     var series = new TimeSeries();
     setInterval(function() { addPercentToTimeSeries(series, group1, identity1, group2, identity2); }, 1000);
 
-    var chart = new SmoothieChart({ millisPerPixel: 20, grid: { strokeStyle: '#555555', fillStyle: '#402817',  lineWidth: 1, millisPerLine: 1000, verticalSections: 4 }});
+    var chart = new SmoothieChart({ millisPerPixel: 200, grid: { strokeStyle: '#555555', fillStyle: '#402817',  lineWidth: 1, millisPerLine: 10000, verticalSections: 4 }});
     chart.addTimeSeries(series, { strokeStyle: lineColor, fillStyle: fillColor, lineWidth: 3 });
     chart.streamTo(document.getElementById(divId), 1000);
 };
@@ -397,7 +397,7 @@ function createChart(group, identity, divId, lineColor, fillColor, isCounter) {
     
     setInterval(function() { addServerStatusValueToSeries(series, group, identity, isCounter); }, 1000);
 
-    var chart = new SmoothieChart({ millisPerPixel: 20, grid: { strokeStyle: '#555555', fillStyle: '#402817',  lineWidth: 1, millisPerLine: 1000, verticalSections: 4 }});
+    var chart = new SmoothieChart({ millisPerPixel: 200, grid: { strokeStyle: '#555555', fillStyle: '#402817',  lineWidth: 1, millisPerLine: 10000, verticalSections: 4 }});
     chart.addTimeSeries(series, { strokeStyle: lineColor, fillStyle: fillColor, lineWidth: 3 });
     chart.streamTo(document.getElementById(divId), 1000);
 };
